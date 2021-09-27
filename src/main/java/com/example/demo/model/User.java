@@ -21,6 +21,7 @@ public class User {
     private String firstName;
     @Column(name = "last_Name")
     private String lastName;
+
     @Enumerated(value = EnumType.STRING)
     @Column(name = "role")
     private Role role;

@@ -15,15 +15,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     public UserDetailsServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
+        this.userRepository = userRepository;SpringSecurityCourse
     }
-
-
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email).orElseThrow(() ->
-                new UsernameNotFoundException("User doesn't exists"));
+                new UsernameNotFoundException("User doesn't exists"));      // exists ==> "mavjud"
         return SecurityUser.fromUser(user);
     }
 }
